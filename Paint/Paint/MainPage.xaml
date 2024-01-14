@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Paint"
+             xmlns:views="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:tt="clr-namespace:TouchTracking.Forms;assembly=TouchTracking.Forms"
+             x:Class="Paint.MainPage"
+             BackgroundColor="LightGray">
+    <StackLayout Margin ="3">
+        <StackLayout Orientation="Horizontal" Margin="3" HorizontalOptions="Center">
+            <Button x:Name="brush" BackgroundColor="LightGray" Image="brush.png"  Clicked ="Brush_Clicked" HeightRequest="40" WidthRequest="40" BorderWidth="5" BorderColor="Gray"/>
+            <Button x:Name="rect" BackgroundColor="LightGray" Image="square.png" Clicked ="Rect_Clicked" HeightRequest="40" WidthRequest="40" BorderWidth="5"/>
+            <Button x:Name="oval" BackgroundColor="LightGray" Image="oval.png" Clicked ="Ellipce_Clicked" HeightRequest="40" WidthRequest="40" BorderWidth="5"/>
+            <Button x:Name="line" BackgroundColor="LightGray" Image="line.png" Clicked ="Line_Clicked" HeightRequest="40" WidthRequest="40" BorderWidth="5"/>
+            <Button x:Name="fill" BackgroundColor="LightGray" Image="fill.png" Clicked ="Fill_Clicked" HeightRequest="40" WidthRequest="40" BorderWidth="5"/>
+            <Button x:Name="clean" BackgroundColor="LightGray" Image="new_pic.png" Clicked ="Clear_Clicked" HeightRequest="40" WidthRequest="40" BorderWidth="5"/>
+        </StackLayout>
+        <Slider x:Name="slider" Maximum="100" Minimum="5" ValueChanged="Slider_ValueChanged" HeightRequest="30" ThumbColor="Black" Value="6"/>
+        <views:SKCanvasView x:Name="canvasView" BackgroundColor="White" EnableTouchEvents="False" PaintSurface="OnCanvasViewPaintSurface" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <views:SKCanvasView.Effects>
+                <tt:TouchEffect Capture="True" TouchAction="OnTouchEffectAction"/>
+            </views:SKCanvasView.Effects>
+        </views:SKCanvasView>
+        <StackLayout Orientation="Horizontal" Margin="3" HorizontalOptions="Center">
+            <Button x:Name="blackb" BackgroundColor="Black" Clicked ="Black_Clicked" HeightRequest="40" WidthRequest="40" BorderWidth="5" BorderColor="Gray"/>
+            <Button x:Name="redb" BackgroundColor="Red" Clicked ="Red_Clicked" HeightRequest="40" WidthRequest="40" BorderWidth="5"/>
+            <Button x:Name="whiteb" BackgroundColor="White" Clicked ="White_Clicked" HeightRequest="40" WidthRequest="40" BorderWidth="5"/>
+            <Button x:Name="yellowb" BackgroundColor="Yellow" Clicked ="Yellow_Clicked" HeightRequest="40" WidthRequest="40" BorderWidth="5"/>
+            <Button x:Name="greenb" BackgroundColor="Green" Clicked ="Green_Clicked" HeightRequest="40" WidthRequest="40" BorderWidth="5"/>
+            <Button x:Name="blueb" BackgroundColor="Blue" Clicked ="Blue_Clicked" HeightRequest="40" WidthRequest="40" BorderWidth="5"/>
+            <Button x:Name="orangeb" BackgroundColor="Orange" Clicked ="Orange_Clicked" HeightRequest="40" WidthRequest="40" BorderWidth="5"/>
+            <Button x:Name="brownb" BackgroundColor="Brown" Clicked ="Brown_Clicked" HeightRequest="40" WidthRequest="40" BorderWidth="5"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
